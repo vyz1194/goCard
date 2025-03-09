@@ -14,9 +14,9 @@
           <div class="header-content">
             <div class="header-title">
               <button id="back-button" class="back-button" style="display: none;">←</button>
-              <h1 class="title">Card Finder <span id="step-indicator">(Step 1 of 4)</span></h1>
+              <h1 class="title">Card Finder <span id="step-indicator">(Step 1 of 5)</span></h1>
             </div>
-            <span id="progress-text" class="progress-text">25% Complete</span>
+            <span id="progress-text" class="progress-text">20% Complete</span>
           </div>
         </div>
         <div class="card-content">
@@ -52,10 +52,10 @@
                 <label class="form-label" for="monthly-income-select">Monthly Income</label>
                 <select id="monthly-income-select" class="form-select">
                   <option value="">Select income range</option>
-                  <option value="below25k">Below ₹25,000</option>
+                  <option value="below 25k">Below ₹25,000</option>
                   <option value="25k-50k">₹25,000 - ₹50,000</option>
                   <option value="50k-100k">₹50,000 - ₹1,00,000</option>
-                  <option value="above100k">Above ₹1,00,000</option>
+                  <option value="above 100k">Above ₹1,00,000</option>
                 </select>
               </div>
             </div>
@@ -113,10 +113,11 @@
                 <label class="form-label" for="annual-fee-select">Maximum Annual Fee You're Willing to Pay</label>
                 <select id="annual-fee-select" class="form-select">
                   <option value="">Select fee range</option>
-                  <option value="no-fee">No Annual Fee</option>
-                  <option value="low">Up to ₹1,000</option>
-                  <option value="medium">₹1,000 - ₹5,000</option>
-                  <option value="high">Above ₹5,000</option>
+                  <option value=no-fee>No Annual Fee (Lifetime Free)</option>
+                  <option value=low>Up to ₹1000</option>
+                  <option value=medium>Up to ₹2000</option>
+                  <option value=high>Up to ₹5000</option>
+                  <option value=no-restriction>No Restriction (I want the best rewards, regardless of fees)</option>
                 </select>
               </div>
             </div>
@@ -135,9 +136,25 @@
               </div>
             </div>
 
-            <!-- Step 5: Results -->
+            <!-- Step 5: Additional Preferences -->
             <div id="step-5" class="step" style="display: none;">
+              <h2 class="step-title">Any Specific Requirements?</h2>
+              <div class="form-group">
+                <label class="form-label" for="specific-features">Tell us about any specific features you're looking for (Optional)</label>
+                <textarea id="specific-features" class="form-input" rows="4" placeholder="E.g., Airport lounge access, cashback on groceries, low forex markup, etc."></textarea>
+              </div>
+            </div>
+
+            <!-- Step 6: Results -->
+            <div id="step-6" class="step" style="display: none;">
               <h2 class="step-title">Recommended Cards</h2>
+              <!-- Replace your current loading container with this one -->
+              <div id="loading-container" class="loading-container" style="display: none;">
+                <!-- The 3D animation will be inserted here by JavaScript -->
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Finding your perfect cards...</p>
+                <p class="loading-subtext">This may take a few moments while we analyze your preferences.</p>
+              </div>
               <div id="results-container">
                 <!-- Results will be populated by JavaScript -->
               </div>
@@ -153,5 +170,6 @@
   </div>
 
   <script src="card-finder.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </body>
 </html>
