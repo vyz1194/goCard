@@ -300,3 +300,197 @@ body {
 .notify-button:hover {
     background-color: #16a34a;
 }
+
+/* Add these additional styles to your existing CSS file */
+/*
+  .loading-spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border-left-color: #22c55e;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  *//* Updated CSS for loading animation and card transitions */
+
+  /* Loading container */
+  .loading-container {
+    position: relative;
+    width: 100%;
+    height: 320px; /* Increased height for larger animation */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    margin: 20px 0 40px;
+  }
+
+  .loading-container.active {
+    opacity: 1;
+  }
+
+  .loading-animation-container {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Increased height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  /* Canvas styling for larger animation */
+  .loading-animation-container canvas {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .loading-text {
+    color: #22c55e; /* Changed to match the animation color */
+    margin: 15px 0 5px;
+    font-size: 1.25rem; /* Larger text */
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .loading-subtext {
+    color: #6b7280;
+    font-size: 0.95rem; /* Larger text */
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  /* Hide original loading spinner when using the fancy animation */
+  .loading-container.fancy-active .loading-spinner {
+    display: none;
+  }
+
+  /* Pulsing animation for the text */
+  @keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+  }
+
+  .loading-container.fancy-active .loading-text {
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  /* Card recommendations animation */
+  .card-recommendation {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+  }
+
+
+  .card-recommendation {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-recommendation h4 {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1f2937;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-recommendation ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-recommendation li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Match score highlight */
+  .match-score {
+    color: #16a34a;
+    font-weight: 600;
+    padding: 4px 10px;
+    background-color: rgba(34, 197, 94, 0.1);
+    border-radius: 12px;
+    display: inline-block;
+  }
+
+  /* Card header improvements */
+  .card-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  /* Improve card images */
+  .card-image {
+    width: 4.5rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  .card-bank-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .card-bank {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  .card-name {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+
+  
+/* Smooth transitions for steps */
+.step {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .step.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  .step.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  
